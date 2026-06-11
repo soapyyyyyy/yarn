@@ -10,20 +10,16 @@ h1 {
   margin-bottom: 16px;
 }
 
+h2 {
+  margin-top: 24px;
+}
+
 .layout {
-  display: flex;
-  align-items: flex-start;
-  gap: 32px;
+  display: block;
 }
 
 .controls {
   width: 360px;
-  flex-shrink: 0;
-}
-
-.output {
-  flex: 1;
-  min-width: 0;
 }
 
 .input-group {
@@ -59,7 +55,7 @@ button {
 .yarn-cell {
   width: 20px;
   height: 30px;
-  border: 1px solid #00cc66;
+  border: 1px solid #000000;
   cursor: pointer;
 }
 
@@ -67,4 +63,22 @@ button {
   width: 18px;
   height: 18px;
   border: 1px solid #dddddd;
+}
+
+.widget {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  width: 700px;
+  height: 500px;
+  background: white;
+  border: 2px solid #222;
+  padding: 12px;
+  overflow: auto;
+  resize: both;
+  z-index: 10;
+}
+
+.widget h2 {
+  margin-top: 0;
 }
