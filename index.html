@@ -10,65 +10,64 @@
 
   <h1>Yarn Repeat Visualizer</h1>
 
-  <p>
-    1. Enter repeat and fabric dimensions.<br>
-    2. Click "Create Yarn Repeat".<br>
-    3. Paint the yarn segments.<br>
-    4. Click "Generate Fabric".
-  </p>
+  <main class="layout">
 
-  <div class="input-group">
-    <label for="repeatLength">Repeat Length (cm)</label>
-    <input id="repeatLength" type="number" value="20">
-  </div>
+    <section class="controls">
+      <p>
+        1. Enter repeat and fabric dimensions.<br>
+        2. Click "Create Yarn Repeat".<br>
+        3. Paint the yarn segments.<br>
+        4. Click "Generate Fabric".
+      </p>
 
-  <div class="input-group">
-    <label for="cmPerStitch">Yarn Used Per Stitch (cm)</label>
-    <input id="cmPerStitch" type="number" value="0.5" step="0.1">
-  </div>
+      <div class="input-group">
+        <label for="repeatLength">Repeat Length (cm)</label>
+        <input id="repeatLength" type="number" value="20">
+      </div>
 
-  <div class="input-group">
-    <label for="stitchesPerRow">Stitches Per Row</label>
-    <input id="stitchesPerRow" type="number" value="20">
-  </div>
+      <div class="input-group">
+        <label for="cmPerStitch">Yarn Used Per Stitch (cm)</label>
+        <input id="cmPerStitch" type="number" value="0.5" step="0.1">
+      </div>
 
-  <div class="input-group">
-    <label for="rows">Rows</label>
-    <input id="rows" type="number" value="10">
-  </div>
+      <div class="input-group">
+        <label for="stitchesPerRow">Stitches Per Row</label>
+        <input id="stitchesPerRow" type="number" value="20">
+      </div>
 
-  <div class="input-group">
-    <label for="workMode">Work Mode</label>
-    <select id="workMode">
-      <option value="round">In the Round</option>
-      <option value="flat">Back and Forth</option>
-    </select>
-  </div>
+      <div class="input-group">
+        <label for="rows">Rows</label>
+        <input id="rows" type="number" value="10">
+      </div>
 
-  <div class="input-group">
-    <label for="colorPicker">Paint Color</label>
-    <input id="colorPicker" type="color" value="#ff0000">
-  </div>
+      <div class="input-group">
+        <label for="workMode">Work Mode</label>
+        <select id="workMode">
+          <option value="round">In the Round</option>
+          <option value="flat">Back and Forth</option>
+        </select>
+      </div>
 
-  <button id="makeYarn">Create Yarn Repeat</button>
-  <button id="makeGrid">Generate Fabric</button>
+      <div class="input-group">
+        <label for="colorPicker">Paint Color</label>
+        <input id="colorPicker" type="color" value="#ff0000">
+      </div>
 
-  <h2>Yarn Repeat</h2>
+      <button id="makeYarn">Create Yarn Repeat</button>
+      <button id="makeGrid">Generate Fabric</button>
 
-  <p>
-    Each square represents 1 cm of yarn.
-    Click a square to assign it the selected color.
-  </p>
+      <h2>Yarn Repeat</h2>
+      <p>Each square represents 1 cm of yarn.</p>
+      <div id="yarnStrip"></div>
+    </section>
 
-  <div id="yarnStrip"></div>
+    <section class="output">
+      <h2>Fabric Visualization</h2>
+      <p>Each square represents one stitch.</p>
+      <div id="fabricGrid"></div>
+    </section>
 
-  <h2>Fabric Visualization</h2>
-
-  <p>
-    Each square represents one stitch.
-  </p>
-
-  <div id="fabricGrid"></div>
+  </main>
 
   <script src="script.js"></script>
 
