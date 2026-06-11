@@ -47,24 +47,30 @@ function makeFabricGrid() {
   fabricGrid.innerHTML = "";
   fabricGrid.style.gridTemplateColumns = `repeat(${stitchesPerRow}, 18px)`;
 
-  const totalStitches = stitchesPerRow * rows;
+  for (let row = 0; row < rows; row++) {
 
-  for (let n = 0; n < totalStitches; n++) {
-    const row = Math.floor(n / stitchesPerRow);
-    const col = n % stitchesPerRow;
+    let rowColors = [];
 
-    const yarnCm = n * cmPerStitch;
-    const repeatIndex = Math.floor(yarnCm) % yarn.length;
-    const color = yarn[repeatIndex];
+    for (let col = 0; col < stitchesPerRow; col++) {
 
-    const stitch = document.createElement("div");
-    stitch.className = "stitch";
-    stitch.style.backgroundColor = color;
+      const stitchNumber = row * stitchesPerRow + col;
 
-    if (workMode === "flat" && row % 2 === 1) {
-      stitch.style.gridColumn = stitchesPerRow - col;
+      const yarnCm = stitchNumber * cmPerStitch;
+      const repeatIndex = Math.floor(yarnCm) % yarn.length;
+
+      rowColors.push(yarn[repeatIndex]);
     }
 
-    fabricGrid.appendChild(stitch);
+    if (workMode === "flat" && row % 2 === 1) {
+      rowColors.reverse();
+    }
+
+    for (const color of rowColors) {
+      const stitch = document.createElement("div");
+      stitch.className = "stitch";
+      stitch.style.backgroundColor = color;
+
+      fabricGrid.appendChild(stitch);
+    }
   }
 }
