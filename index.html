@@ -17,28 +17,38 @@
     4. Click "Generate Fabric".
   </p>
 
-  <label for="repeatLength">Repeat Length (cm)</label>
-  <input id="repeatLength" type="number" value="20">
+  <div class="input-group">
+    <label for="repeatLength">Repeat Length (cm)</label>
+    <input id="repeatLength" type="number" value="20">
+  </div>
 
-  <label for="cmPerStitch">Yarn Used Per Stitch (cm)</label>
-  <input id="cmPerStitch" type="number" value="0.5" step="0.1">
+  <div class="input-group">
+    <label for="cmPerStitch">Yarn Used Per Stitch (cm)</label>
+    <input id="cmPerStitch" type="number" value="0.5" step="0.1">
+  </div>
 
-  <label for="stitchesPerRow">Stitches Per Row</label>
-  <input id="stitchesPerRow" type="number" value="20">
+  <div class="input-group">
+    <label for="stitchesPerRow">Stitches Per Row</label>
+    <input id="stitchesPerRow" type="number" value="20">
+  </div>
 
-  <label for="rows">Rows</label>
-  <input id="rows" type="number" value="10">
+  <div class="input-group">
+    <label for="rows">Rows</label>
+    <input id="rows" type="number" value="10">
+  </div>
 
-  <label for="workMode">Work Mode</label> 
-  <select id="workMode">
-    <option value="round">In the Round</option>
-    <option value="flat">Back and Forth</option>
-  </select>
+  <div class="input-group">
+    <label for="workMode">Work Mode</label>
+    <select id="workMode">
+      <option value="round">In the Round</option>
+      <option value="flat">Back and Forth</option>
+    </select>
+  </div>
 
-  <label for="colorPicker">Paint Color</label>
-  <input id="colorPicker" type="color" value="#ff0000">
-
-  <br>
+  <div class="input-group">
+    <label for="colorPicker">Paint Color</label>
+    <input id="colorPicker" type="color" value="#ff0000">
+  </div>
 
   <button id="makeYarn">Create Yarn Repeat</button>
   <button id="makeGrid">Generate Fabric</button>
