@@ -35,13 +35,14 @@ function makeYarnStrip() {
 
 function makeFabricGrid() {
   if (yarn.length === 0) {
-    alert("Make the yarn strip first.");
+    alert("Create the yarn repeat first.");
     return;
   }
 
   const cmPerStitch = Number(document.getElementById("cmPerStitch").value);
   const stitchesPerRow = Number(document.getElementById("stitchesPerRow").value);
   const rows = Number(document.getElementById("rows").value);
+  const workMode = document.getElementById("workMode").value;
 
   fabricGrid.innerHTML = "";
   fabricGrid.style.gridTemplateColumns = `repeat(${stitchesPerRow}, 18px)`;
@@ -49,6 +50,9 @@ function makeFabricGrid() {
   const totalStitches = stitchesPerRow * rows;
 
   for (let n = 0; n < totalStitches; n++) {
+    const row = Math.floor(n / stitchesPerRow);
+    const col = n % stitchesPerRow;
+
     const yarnCm = n * cmPerStitch;
     const repeatIndex = Math.floor(yarnCm) % yarn.length;
     const color = yarn[repeatIndex];
@@ -56,6 +60,10 @@ function makeFabricGrid() {
     const stitch = document.createElement("div");
     stitch.className = "stitch";
     stitch.style.backgroundColor = color;
+
+    if (workMode === "flat" && row % 2 === 1) {
+      stitch.style.gridColumn = stitchesPerRow - col;
+    }
 
     fabricGrid.appendChild(stitch);
   }
