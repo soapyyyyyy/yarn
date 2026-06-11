@@ -74,3 +74,10 @@ function makeFabricGrid() {
     }
   }
 }
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    makeFabricGrid();
+  }
+});
