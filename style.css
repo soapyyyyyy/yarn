@@ -1,0 +1,31 @@
+body {
+  background: black;
+  color: #00ff66;
+  font-family: "Courier New", monospace;
+  padding: 20px;
+}
+
+input, button {
+  margin: 4px;
+  font-family: inherit;
+}
+
+#yarnStrip,
+#fabricGrid {
+  display: grid;
+  gap: 1px;
+  margin-top: 16px;
+}
+
+.yarn-cell {
+  width: 20px;
+  height: 30px;
+  border: 1px solid #00ff66;
+  cursor: pointer;
+}
+
+.stitch {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #222;
+}
